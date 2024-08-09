@@ -14,7 +14,7 @@ import pandas as pd
 
 def get_page_data(url):
     html_text = requests.get(url).text
-    # get list which is profiles keeping
+    # get list that contains the profiles
     regex_model = re.compile(r'<h3><a href="(/az/h%C9%99kiml%C9%99r/[^"]+)">')
     doctors_profiles = set(re.findall(regex_model, html_text))
     page_data = []
